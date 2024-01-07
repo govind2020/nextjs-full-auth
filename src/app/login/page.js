@@ -27,7 +27,6 @@ const LoginPage = () => {
     try {
       const response = await axios.post('/api/login', e);
       const data = await response.data;
-      console.log('data', {data});
       toast.success(data.msg);
       resetForm();
       router.push("/");

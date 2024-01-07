@@ -31,8 +31,6 @@ export const POST = async (request) => {
     // token
     const token = await Generationtoken(userExist)
     
-    console.log('Generated Token:', token);
-
     const response = NextResponse.json({
         error: null,
         msg: "User Login Successfully",
@@ -50,7 +48,6 @@ export const POST = async (request) => {
     return response;
 
   } catch (error) {
-    console.error("Error:", error);
     return NextResponse.json(
       { msg: null, error: "Internal Server Error" },
       { status: 500 }

@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const UpdatePassword = (params) => {
-  console.log({params})
   const router = useRouter();
 
   const validationSchema = yup.object({

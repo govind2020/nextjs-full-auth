@@ -21,7 +21,6 @@ const Forgetassword = () => {
   };
 
   const onSubmitHandler = async (e, { resetForm }) => {
-    console.log("Form Data:", e);
     try {
       const response = await axios.post("/api/forgetPassword", e);
       const data = await response.data;

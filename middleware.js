@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 
 export const middleware = (request) =>{
     const pathVariable = request.nextUrl?.pathname;
-    console.log({pathVariable})
 
     const publicPath = ['/register', '/update-password','/forgot', '/login'];
 

@@ -28,7 +28,6 @@ const RegisterPage = () => {
     try {
       const response = await axios.post('/api/register', e);
       const data = await response.data;
-      console.log('data', {data});
       toast.success(data.msg);
       resetForm();
       router.push("/login");

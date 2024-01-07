@@ -20,7 +20,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axios.get("/api/profile");
       const data = await response.data;
-      console.log("===>", data.user);
       setUser(data.user);
     } catch (error) {
       toast.error(error.message);

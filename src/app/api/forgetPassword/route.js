@@ -9,11 +9,9 @@ ConnectDB();
 
 export const POST = async (request) => {
   const { email } = await request.json();
-  console.log('email', email)
 
   try {
     const userExist = await UserModel.findOne({ email });
-    console.log("userExist", userExist)
 
     if (!userExist) {
       return NextResponse.json(
@@ -25,10 +23,8 @@ export const POST = async (request) => {
 
     // token
     const token = await GenerationForgettoken(userExist, email);
-    console.log('token', token)
 
     const mailResponse = await SendEmail(userExist.name, token, email);
-    console.log('mailResponse', mailResponse)
 
     const response = NextResponse.json({
       error: null,
@@ -36,7 +32,6 @@ export const POST = async (request) => {
       status: 200
     });
     
-    console.log('response', response)
     return response;
   } catch (error) {
     return NextResponse.json(
